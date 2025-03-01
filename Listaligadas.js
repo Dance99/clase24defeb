@@ -93,6 +93,9 @@ class linkedlist {
                 for (let i = 0; i < index - 1; i++) {
                     prev = prev.next; //avanza al siguiente nodo
                 }
+
+                removeNode = prev.next; // guarda el nodo a eliminar
+                prev.next = removeNode.next; //ajusta el puntero del nodo previo al siguiente del nodo eliminado.
             }
         }
 
