@@ -91,12 +91,15 @@ class linkedlist {
 
                 //itera hasta el nodo previo al que se desea eliminar 
                 for (let i = 0; i < index - 1; i++) {
-                    prev = prev.next; //avanza al siguiente nodo
+                    prev = prev.next;  //avanza al siguiente nodo
                 }
 
                 removeNode = prev.next; // guarda el nodo a eliminar
                 prev.next = removeNode.next; //ajusta el puntero del nodo previo al siguiente del nodo eliminado.
             }
+
+            this.size--; //Decrementa el tamaño de la lista
+            return removeNode.value; // retorna el valor del nodo eliminado.
         }
 
     print() {
@@ -144,3 +147,20 @@ list.print()
 const lista = new linkedlist();
  lista.print();
  lista.Insert(10, 0);
+
+ lista.Insert(10,1);
+ list.print();
+
+ lista.Insert(5,0);
+ list.print();
+
+ lista.Insert(6, 3);
+ list.print();
+
+ lista.Insert(8, 2);
+ list.print();
+
+
+ console.log(list.removeFrom(0), `Eliminado`)
+
+ console.log(list.removeFrom(8), `Eliminado`)
