@@ -1,36 +1,36 @@
 class Node {
     constructor(value) {
         this.value = value
-        this.netx = null
+        this.next = null
     }
 }
 
-class linkedlist {
+class LinkedList {
     constructor() {
         this.head = null
         this.size = 0
     }
 
-    isEmpety(){
+    isEmpty(){
         return this.size === 0
     }
 
-    getsize () {
-        return this.size
+    getsize() {
+        return this.size;
     }
 
-    Prepend(value) {
+    prepend(value) {
         //crea un nuevo nodo con el valor proporcionado
         const node = new Node(value)
 
         // si la lista esta vacia
-        if (this.isEmpety()) {
+        if (this.isEmpty()) {
 
             //.. le nuevo nodo se convierte em la cabeza de la lista
             this.head = node
         } else {
 
-            node.text = this.head
+            node.next = this.head
 
             this.head = node
         }
@@ -38,7 +38,7 @@ class linkedlist {
     }
 
     //insertar
-    Insert(value, index) {
+    insert(value, index) {
         //verifica si el indice es invalidado (menor que 0 o(||) mayor qie el tamaño actual de la lista)
         if (index < 0 || index > this.size) {
             
@@ -47,7 +47,7 @@ class linkedlist {
             
             //si el inidice es 0, usa el metodo prepend para insertar el valor al inicio de la lista.
             if (index === 0) {
-                this.Prepend(value);
+                this.prepend(value);
             } else {
                 // crea un nuevo nodo con el valor proporcionado 
                 const node = new Node (value);
@@ -103,12 +103,12 @@ class linkedlist {
         }
 
     print() {
-        if (this.isEmpety()) {
+        if (this.isEmpty()) {
             console.log(`lista vacia`) //imprime mensaje de que la lista esta vacia 
         } else {
             let curr = this.head //inicia el nodo 
             // variable para almacenar los valores de los nodos 
-            let lisvalue = ``
+            let lisvalue = ``;
 
             // recorre la lista hasta que curr (nodo actual) sea null
             while (curr) {
@@ -125,9 +125,9 @@ class linkedlist {
 }
 
 
-const list = new linkedlist()
+const list = new LinkedList()
 
-console.log('¿Esta vacía la lista?', list.isEmpety())
+console.log('¿Esta vacía la lista?', list.isEmpty())
 console.log(`Tamaño de la lista`, list.getsize())
 
 // list.Prepend(6)
@@ -135,29 +135,29 @@ console.log(`Tamaño de la lista`, list.getsize())
 // list.Prepend(10)
 
 list.print()
-list.Prepend(6)
+list.prepend(6)
 list.print()
 
-list.Prepend(10)
-list.Prepend(14)
-list.Prepend(8)
+list.prepend(10)
+list.prepend(14)
+list.prepend(8)
 list.print()
 
 
-const lista = new linkedlist();
+const lista = new LinkedList();
  lista.print();
- lista.Insert(10, 0);
+ lista.insert(10, 0);
 
- lista.Insert(10,1);
+ lista.insert(10,1);
  list.print();
 
- lista.Insert(5,0);
+ lista.insert(5,0);
  list.print();
 
- lista.Insert(6, 3);
+ lista.insert(6, 3);
  list.print();
 
- lista.Insert(8, 2);
+ lista.insert(8, 2);
  list.print();
 
 
