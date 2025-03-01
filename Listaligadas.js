@@ -71,6 +71,31 @@ class linkedlist {
 
         } 
 
+        //Metodo remover: elomina un nodo de la lista enlazada de una posicion especifico 
+        removeFrom(index) {
+            //verifica si el indice esta fuera del rango valido (menor que 0 o mayor o igual al tamaño de lalista)
+            if (index < 0 || index >= this.size) {
+                return null; //retorna null si el indice no es valido 
+            }
+
+             let removeNode; // variable para almacenar el nodo que sera eliminado
+
+             //caso especial: si se elimina el primer nodo (indice 0).
+            
+            if (index === 0) {
+                removeNode = this.head; // Guarda el nodo actual de la cabeza
+                this.head = this.head.next; //Mueve la cabeza al siguiente nodo
+            } else {
+                //para terminar un nodo que no esta al inicio, se debe iterar hasta el nodo anterior al que se eliminara
+                let prev = this.head; //comienza desde la cabeza
+
+                //itera hasta el nodo previo al que se desea eliminar 
+                for (let i = 0; i < index - 1; i++) {
+                    prev = prev.next; //avanza al siguiente nodo
+                }
+            }
+        }
+
     print() {
         if (this.isEmpety()) {
             console.log(`lista vacia`) //imprime mensaje de que la lista esta vacia 
