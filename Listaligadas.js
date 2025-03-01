@@ -164,3 +164,8 @@ const lista = new linkedlist();
  console.log(list.removeFrom(0), `Eliminado`)
 
  console.log(list.removeFrom(8), `Eliminado`)
+
+ list.print(); //imprimir nueva lista
+
+ console.log(list.removeFrom(1))
+ list.print();
